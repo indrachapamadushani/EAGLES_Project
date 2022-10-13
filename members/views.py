@@ -14,7 +14,7 @@ def search(request):
     
     if request.method=='POST':
         username = request.POST['username']
-        username_object = user_objects.filter(username__icontain=username)
+        username_object = user_objects.filter(username__icontains=username)
        
         username_profile = []
         username_profile_list = []
