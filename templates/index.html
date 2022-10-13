@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -35,12 +37,13 @@
                         </div>-->
 
                         <!--<div class="header_search">-->
-                            <input type="text" name="username" placeholder="Search for username..">
-                            <button type="submit"></button>
+                            <input type="text" name="username" placeholder="Search for username..">&nbsp; &nbsp;
+                        <button type="submit"><i class="fa fa-search fa-lx"></i></button>
                         <!--</div>-->
 
                     </div>
-                    </form>
+                    </form action="search" method="POST">
+                    {% csrf_token %}
                     <div class="right-side lg:pr-4">
                          <!-- upload -->
                         <a href="#"
