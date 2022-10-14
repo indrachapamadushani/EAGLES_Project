@@ -29,5 +29,10 @@ class Post(models.Model):
         return self.user
     
     
-    
+# class for Like-Post
+class LikePost(models.Models):
+    post_id = models.CharField(max_length = 500)
+    username = models.CharField(max_length = 100)
 
+    def __str __(self)
+        return self.username
