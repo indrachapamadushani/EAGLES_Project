@@ -77,7 +77,22 @@ def upload(request):
 
 
 @login_required(login_url='signin')
-def Like_Post(request)
+def Like_Post(request):
+
+@login_required(login_url='signin')
+def profile(request,pk):
+    user_object = user.objects.get(username=pk)
+    user_profile = profile.objects.get(user=user_object)
+    user_posts = post.objects.filter(user=pk)
+    user_post_length = len(user_posts)
+    context = {
+        'user_object':user_object,
+        'user_profile':user_profile,
+        'user_posts':user_posts,
+        'user_post_length':user_post_length,
+    }
+    return render(request,'profile.html', context)
+
     username = request.user.username
     post_id = request.GET.get('Post_id')
 
