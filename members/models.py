@@ -30,16 +30,4 @@ class Post(models.Model):
     
     
     
-class LikePost(models.Models):
-    post_id = models.Charfield(max_length=500)
-    username =models.CharField(max_length=100)
 
-    def __str __(self):
-        return self.username
-
-class FollowersCount(models.Model):
-    follower = models.CharField(max_length=100)
-    user = model.CharField(max_length=100)
-
-    def __str __(self):
-        return self.user
