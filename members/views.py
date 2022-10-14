@@ -1,7 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User, auth
+from django.contrib import messages
 from django.http import HttpResponse
-from django.contib.auth.decorators import login_required
-
+from django.contrib.auth.decorators import login_required
+from .models import Profile, Post, LikePost, FollowersCount
+from itertools import chain
+import random
 
 # Create your views here.
 def index(request):
@@ -26,7 +30,8 @@ def search(request):
             profile_lists = profile.objects.filter(id_user=ids)
             username_profile_list.append(profile_lists)
             
-       username_profile_list = list(chain("username_profile_list))   
+       username_profile_list = list(chain("username_profile_list)) 
+                                          
     return render(request, 'serach.html', {'user_profile': user_profile, 'username_profile_list': username_profile_list})
 
                 
