@@ -61,6 +61,7 @@
                             </div>
 
                             <!-- notification contents -->
+
                             <div class="flex justify-center flex-center text-center">
 
                                 <div class="flex flex-col choose-upload text-center">
@@ -72,16 +73,22 @@
                                         </svg>
                                     </div>
 
-                                    <p class="my-3 leading-6"> Upload pics or videos <br> please upload her ..
+                                    <form action="upload" method="POST" enctype="multipart/form-data" >
+                                    {% csrf_token %}
+                                    <p class="my-3 leading-6"> Upload pictures
                                     </p>
-                                    <div uk-form-custom>
-                                        <input type="file">
-                                        <a href="#" class="button soft-warning small"> Choose file</a>
-                                    </div>
+                                    <div>
+                                        <input type="file" name="image_upload">
+                                        <!-- <a href="#" class="button soft-warning small"> Choose file</a> -->
+                                        <textarea class="button soft-warning small" name="caption" placeholder="caption..." ></textarea>
+                                        <br>
+                                        <button class="button bg-blue-700" type="submit" >Upload</button>
 
-                                    <a href="#" class="uk-text-muted mt-3 uk-link"
-                                        uk-toggle="target: .choose-upload ;  animation: uk-animation-slide-right-small, uk-animation-slide-left-medium; queued: true">
-                                        Or Import Video </a>
+                                    </div>
+                                    </form>
+
+
+
                                 </div>
 
                                 <div class="uk-flex uk-flex-column choose-upload" hidden>
@@ -104,8 +111,9 @@
                                 </div>
 
                             </div>
+
                             <div class="px-4 py-3 -mx-5 -mb-4 mt-5 border-t text-sm">
-                                Your Video size Must be Maxmium 999MB
+                                Enter anything you like to share
                             </div>
                         </div>
 
