@@ -147,7 +147,6 @@ def profile(request, pk):
     }
     return render(request, 'profile.html', context)
 
-
 @login_required(login_url='signin')
 def follow(request):
     if request.method == 'POST':
@@ -250,7 +249,6 @@ def signin(request):
 
     else:
         return render(request, 'signin.html')
-
 
 @login_required(login_url='signin')
 def logout(request):
