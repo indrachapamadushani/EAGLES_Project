@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Profile,LikePost,FollowersCount
+from .models import Profile, Post,LikePost,FollowersCount
+
+# from .models import  Post
 
 # Register your models here.
 admin.site.register(Profile)
