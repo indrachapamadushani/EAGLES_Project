@@ -897,8 +897,8 @@ input.keyword-input {
 }
 
 .checkbox input:checked + label span.checkbox-icon {
-  border-color: #be185d;
-  background-color: #be185d;
+  border-color: #82A8F4;
+  background-color: #82A8F4;
 }
 
 .checkbox input:checked + label span.checkbox-icon:after {
